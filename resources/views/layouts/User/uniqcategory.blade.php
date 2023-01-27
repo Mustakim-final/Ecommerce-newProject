@@ -55,7 +55,7 @@
                                 <div class="product">
                                     <div class="thumb">
                                         <a href="single-product.html" class="image">
-                                            <img src="{{ URL::to($row->product_image) }}" alt="Product" />
+                                            <img style="height: 300px" src="{{ URL::to($row->product_image) }}" alt="Product" />
                                         </a>
                                         <span class="badges">
                                             <span class="new">New</span>

@@ -40,7 +40,7 @@
 
                                         @foreach ($category as $row)
                                             <option value="{{ $row->id }}" class="text-info"  @if ($row->id==$data->category_id)selected
-                                                @endif >{{  $row->category_name }}</option>
+                                                @endif >{{  $row->category_name }}</option> 
                                         @endforeach
 
                                     </select>

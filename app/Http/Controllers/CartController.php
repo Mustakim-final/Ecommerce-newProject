@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cart;
+
+//use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -15,6 +17,12 @@ class CartController extends Controller
 {
     public function addcart(Request $request,$id)
     {
+
+
+        // $product=DB::table('products')->where('products.id',$id)->first();
+        // //dd($request->all());
+        // Cart::add($product->id,$product->product_name,$request->input(key:'qty'),$product->product_price);
+        // return redirect()->route('chart.new');
 
         if(Auth::guest()){
             return redirect()->back()->with('success','Please login fast');
@@ -105,7 +113,16 @@ class CartController extends Controller
                       ->join('categories','banners.category_id','categories.id')
                       ->select('categories.category_name','banners.*')
                       ->get();
+
+        //$cart=Cart::content();
+        //dd($cart);
         return view('layouts.User.cart',compact('slider','product','category','cart','subtotal','banner'));
+    }
+
+
+    public function updatechart(Request $request,$rowId)
+    {
+        dd($request->all());
     }
 
     public function delete($id)
@@ -128,6 +145,8 @@ class CartController extends Controller
             DB::table('sub_totals')->update($value);
             $cart->delete();
         }
+
+        //Cart::remove($rowId);
 
         return redirect()->back();
     }

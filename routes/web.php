@@ -37,7 +37,7 @@ Route::get('/user/cart/delete/{id}',[CartController::class,'delete'])->name('car
 
 
 
-Auth::routes();
+Auth::routes(); 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home/admin',[HomeController::class,'adminpage'])->name('admin.page')->middleware('isAdmin');

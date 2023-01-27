@@ -29,6 +29,7 @@ class HomeController extends Controller
         $product=DB::table('products')
                       ->join('categories','products.category_id','categories.id')
                       ->join('manufactures','products.manufacture_id','manufactures.id')
+                      ->where('publication_status',1)
                       ->select('categories.category_name','manufactures.manufacture_name','products.*')
                       ->get();
 
@@ -37,6 +38,7 @@ class HomeController extends Controller
 
         $banner=DB::table('banners')
                       ->join('categories','banners.category_id','categories.id')
+                      ->where('banners.status',1)
                       ->select('categories.category_name','banners.*')
                       ->get();
 

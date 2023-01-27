@@ -26,7 +26,9 @@
         <h3 class="cart-page-title">Your cart items</h3>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
-                <form action="#">
+                <form action="{{ route('chart.update',Auth::user()->id) }}">
+                    @csrf
+
                     <div class="table-content table-responsive cart-table-content">
                         <table>
                             <thead>
@@ -51,13 +53,14 @@
                                     <td class="product-price-cart"><span class="amount">{{ $row->product_price }} Tk</span></td>
                                     <td class="product-quantity">
                                         <div class="cart-plus-minus">
-                                            <input class="cart-plus-minus-box" type="text" name="qtybutton"
+                                            <input class="cart-plus-minus-box" type="text" name="qty"
                                                 value="{{ $row->qty }}" />
                                         </div>
                                     </td>
                                     <td class="product-subtotal">{{ $row->total }} Tk</td>
                                     <td class="product-remove">
                                         <a href="{{ route('cart.delete',$row->id) }}"><i class="fa fa-times"></i></a>
+
                                     </td>
                                 </tr>
 
@@ -75,7 +78,8 @@
                                 </div>
                                 <div class="cart-clear">
                                     <button>Update Shopping Cart</button>
-                                    <a href="#">Clear Shopping Cart</a>
+
+                                    <a href="">Clear Shopping Cart</a>
                                 </div>
                             </div>
                         </div>

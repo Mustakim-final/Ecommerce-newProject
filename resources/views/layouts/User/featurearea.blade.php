@@ -101,7 +101,7 @@
                                 <div class="product">
                                     <div class="thumb">
                                         <a href="single-product.html" class="image">
-                                            <img src="{{ URL::to($row->product_image) }}" alt="Product" />
+                                            <img style="height: 250px" src="{{ URL::to($row->product_image) }}" alt="Product" />
                                         </a>
                                         <span class="badges">
                                             <span class="new">New</span>
@@ -174,7 +174,7 @@
 
         <div class="col-12 col-lg-4 mb-md-30px mb-lm-30px">
             <div class="single-banner-2">
-                <img src="{{ URL::to($row->banner_image) }}" alt="" style="height: 250px">
+                <img src="{{ URL::to($row->banner_image) }}" alt="" style="height: 250px;width:250px">
                 <div class="item-disc">
                     <h4 class="title">{{ $row->title }} <br> {{ $row->category_name }}</h4>
                     <a href="{{ route('categoryby',$row->category_id) }}" class="shop-link btn btn-primary ">Shop Now <i
@@ -244,7 +244,7 @@
                                     <div class="product">
                                         <div class="thumb">
                                             <a href="single-product.html" class="image">
-                                                <img src="{{ URL::to($row->product_image) }}" alt="Product" />
+                                                <img src="{{ URL::to($row->product_image) }}" alt="Product" / style="height: 300px">
                                             </a>
                                             <span class="badges">
                                                 <span class="new">New</span>
